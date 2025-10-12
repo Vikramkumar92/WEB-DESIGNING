@@ -1,0 +1,81 @@
+/* ydi hum inline style add kr dete h toh usko prefer diya jata hai */
+h1{
+    color:blue;
+}
+p{
+    color: purple;
+}
+button{
+    color: brown;
+    background-color: greenyellow;
+}
+
+/*
+there are two types of color system -     
+ i)rgb(0-255)  {jo color full hoga us jgh pr 255 dal denge}
+ ii)hexadecimal(#00ff00){jo color full hoga us jgh pr ff dal denge}
+*/
+body{
+    background-color:rgb(255, 25, 55);
+    /* background-color:rgb(255,0,0) jis posn pr 255 rhega wo color full rhega jaise yha pura red hoga*/
+     background-color:#03fc84;
+}
+
+
+/* Universal Selector *{} -> ye pura background ka color change kr dega */
+*{
+    background-color: antiquewhite;
+}
+
+/* Element Selector h1{}   ->ye sbhi heading ka color change kr dega */
+h1{
+    color: blueviolet;
+}
+
+/*Text Alignment - Ye pura text ko right ya left shift kr deta h */
+p{
+    text-align: right;
+}
+
+/*Text decoration - esse hm text me underlline , aboveline , and line-through line pass krte h */
+h3{
+    text-align:center;
+    text-decoration: blue wavy underline;
+    text-decoration: blue wavy line-through;
+}
+
+/*In the anchor tag if we write click me then by default underline is present ,and if we want to remove it then
+a{
+  text-decoration: none;
+}
+
+/*Font-weight - it is used to light , normal , and dark the font */
+h1{
+    font-weight: 100; /*very light */
+}
+h2{
+    font-weight: 400; /*bold*/
+}
+h3{
+    font-weight: 900; /*very dark*/
+}
+
+/*Font Family - it is used to change the font of text
+  Font-size   - it is used to change the size of text
+  line height - it is used to change the space between lines
+  text-transform - when we want begin letter of each word capital we use capitalize and each letter capital we use uppercase similarly we use lowercase.
+*/
+
+#one{
+    font-family: 'Segoe UI';
+    font-size: 20px;
+    line-height: 15px;
+    text-transform: capitalize;
+}
+#two{
+    font-family: fantasy;
+    font-size: 10px;
+    line-height: 25px;
+    text-transform:lowercase ;
+}
+

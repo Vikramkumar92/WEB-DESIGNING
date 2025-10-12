@@ -1,0 +1,53 @@
+/*the height i will give neat sentence will be written after that height*/
+h3{
+    height: 20px;
+    width: 80px;
+    background-color: aqua;
+}
+h2{
+    height: 25px;;
+    width: 150px;
+    background-color: yellow;
+}
+div{
+    height: 25px;
+    background-color: pink;
+
+    /* All these are three propety of border and we can also write it as border:3px solid red */
+    border-width:3px;
+    border-style: solid;
+    border-color:red;
+    border-radius: 10px;  /*use to round the corner*/
+    /*border radius 50% is used to create circle in css */
+}
+ 
+/*Padding - It is used to leave the space from all the sides 
+it is always written in clockwise format top, right, bottom, left 
+Margin - it is used to leave the space between two elements of border area  */
+
+div1{
+    height: 150px;
+    
+    padding :10px 5px 10px 5px;
+}
+
+/*Display prop. - 
+ inline - Takes only the space required by the elemnt       e.g button
+ block - takes full space available in width    e.g  div
+ inline block - similar to inline but we can set margin and padding    e.g 
+ none - to remove element from document flow  */
+
+/*visibility hidden means space will be left for that element*/
+div1{
+    visibility: hidden;
+}
+
+/*RGBA - here A stands for alpha means percentage of color is present
+it varies between 0.5 to 1 means light to dark */
+div2{
+    height: 100px;
+    width: 100px;
+    padding: 20px;
+    margin: 20px;
+    background-color:rgba(0,0, 255, 1);
+}

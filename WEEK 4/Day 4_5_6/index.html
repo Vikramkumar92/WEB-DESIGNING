@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Travel Planner</title>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="three-container"></div>
+
+    <div class="container">
+        <header>
+            <h1>✈️ 3D Travel Planner</h1>
+            <p class="subtitle">Plan your journey, check live weather, and view your route on the map</p>
+        </header>
+
+        <div class="main-grid">
+            <div class="card">
+                <h2>🗺️ Plan Your Trip</h2>
+                <div class="input-group">
+                    <label for="origin">From</label>
+                    <input type="text" id="origin" placeholder="Enter origin city">
+                </div>
+                <div class="input-group">
+                    <label for="destination">To</label>
+                    <input type="text" id="destination" placeholder="Enter destination city">
+                </div>
+                <div class="input-group">
+                    <label for="travel-date">Travel Date</label>
+                    <input type="date" id="travel-date">
+                </div>
+                <div class="input-group">
+                    <label for="travel-mode">Travel Mode</label>
+                    <select id="travel-mode">
+                        <option value="flight">✈️ Flight</option>
+                        <option value="train">🚂 Train</option>
+                        <option value="car">🚗 Car</option>
+                        <option value="bus">🚌 Bus</option>
+                    </select>
+                </div>
+                <button onclick="planRoute()">Plan My Route</button>
+            </div>
+
+            <div class="card">
+                <h2>🌤️ Weather Forecast</h2>
+                <div class="input-group">
+                    <label for="weather-city">City</label>
+                    <input type="text" id="weather-city" placeholder="Enter city name">
+                </div>
+                <button onclick="checkWeather()">Check Weather</button>
+                
+                <div id="weather-display" class="weather-display">
+                    <div class="weather-info">
+                        <div class="weather-icon" id="weather-icon">☀️</div>
+                        <div class="weather-details">
+                            <h3 id="weather-city-name">City Name</h3>
+                            <div class="weather-stat">
+                                <strong>Temperature:</strong> <span id="weather-temp">--</span>°C
+                            </div>
+                            <div class="weather-stat">
+                                <strong>Condition:</strong> <span id="weather-condition">--</span>
+                            </div>
+                            <div class="weather-stat">
+                                <strong>Humidity:</strong> <span id="weather-humidity">--</span>%
+                            </div>
+                            <div class="weather-stat">
+                                <strong>Wind:</strong> <span id="weather-wind">--</span> km/h
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🗺️ Route Map</h2>
+            <div id="map">
+                <div class="map-placeholder">Enter origin and destination to view route</div>
+            </div>
+            <div id="route-info" class="route-info" style="display: none;">
+                <h3>Route Details</h3>
+                <p><strong>Distance:</strong> <span id="route-distance">--</span></p>
+                <p><strong>Estimated Time:</strong> <span id="route-time">--</span></p>
+                <p><strong>Travel Mode:</strong> <span id="route-mode">--</span></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🎒 Smart Packing List</h2>
+            <div class="input-group">
+                <label for="trip-duration">Trip Duration (days)</label>
+                <input type="number" id="trip-duration" min="1" max="30" value="3">
+            </div>
+            <div class="input-group">
+                <label for="trip-type">Trip Type</label>
+                <select id="trip-type">
+                    <option value="beach">🏖️ Beach/Tropical</option>
+                    <option value="city">🏙️ City/Urban</option>
+                    <option value="mountain">⛰️ Mountain/Adventure</option>
+                    <option value="business">💼 Business</option>
+                    <option value="camping">🏕️ Camping</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="season">Season</label>
+                <select id="season">
+                    <option value="summer">☀️ Summer</option>
+                    <option value="winter">❄️ Winter</option>
+                    <option value="spring">🌸 Spring</option>
+                    <option value="fall">🍂 Fall</option>
+                </select>
+            </div>
+            <button onclick="generatePackingList()">Generate Packing List</button>
+
+            <div id="packing-list-display" style="display: none; margin-top: 20px;">
+                <h3 style="color: #667eea; margin-bottom: 15px;">Your Personalized Packing List</h3>
+                <div id="packing-categories"></div>
+                <div style="margin-top: 15px; padding: 15px; background: #e8f5e9; border-radius: 8px; border-left: 4px solid #4caf50;">
+                    <strong>📦 Total Items:</strong> <span id="total-items">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="script.js" defer></script>
+</body>
+</html>
