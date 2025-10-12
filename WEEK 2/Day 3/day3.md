@@ -1,0 +1,15 @@
+### Topics:
+- CSS Selectors:
+  - Universal (*)
+  - Element, ID (#), and Class (.) selectors
+  - Grouping selectors
+  - Descendant and child selectors
+  - Attribute selectors
+- Pseudo-classes & Pseudo-elements:
+  - :hover, :focus, :active, :first-child, :last-child
+  - ::before, ::after
+- Layout Basics:
+  - float and clear
+  - position: static, relative, absolute, fixed, sticky
+  - z-index
+- Animation

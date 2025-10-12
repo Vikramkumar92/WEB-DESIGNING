@@ -1,0 +1,55 @@
+
+/*position prop. - it sets how an element is positioned in a document
+static - no change in any any property
+relative - change in position relative to iself
+absolute - positioned relative ti its closest ancestor
+fixed - positioned relative to browser
+
+*/
+div{
+    height: 100px;     /*this is normal comment*/
+    width: 100px;
+    background-color: aqua;
+    border: 2px solid black;
+    display: inline-block;
+}
+
+#box3{
+    position: static;
+    background-image:url("catimage.jpg");
+    background-size:cover;
+
+}
+
+#box4{
+    position: relative;
+    top: 50px;
+}
+ 
+#box5{
+    position: absolute;
+    top: 10px;
+    bottom: 20px;
+}
+
+#box6{
+    position: fixed;
+    right:20px
+;
+}
+
+#outer {
+
+    width: 100px;
+    height: 100px;
+    margin:0 auto;
+    box-sizing:border-box;
+    position:relative;
+    display:flex;flex-wrap: wrap;
+    justify-content: center;
+    animation-name: out-ani;
+    animation-duration:4s;
+    animation-iteration-count:infinite;
+    animation-direction:alternate;
+    animation-delay:-2s;
+}
